@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интерактивный образовательный справочник по политическим и общественным идеям.">
+  <title>Идеологии — простыми словами</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Идеологии — на главную">
+      <span class="brand-mark">I</span>
+      <span>ИДЕОЛОГИИ</span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <a href="#map">Карта</a>
+      <a href="#compare">Сравнить</a>
+      <a href="#quiz">Тест</a>
+      <a href="#about">О проекте</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-kicker">ИНТЕРАКТИВНЫЙ СПРАВОЧНИК</div>
+      <h1>Разберёмся,<br><span>что стоит за идеями.</span></h1>
+      <p>
+        Наводи курсор на идеологию. Интерфейс изменит настроение,
+        а справа появится простое объяснение и исторический контекст.
+      </p>
+      <a class="scroll-hint" href="#map">↓ исследовать карту</a>
+    </section>
+
+    <section class="welcome-strip" aria-label="Как пользоваться сайтом">
+      <div><strong>Не выбирай сторону.</strong><span>Сначала пойми её.</span></div>
+      <div><strong>16 идеологий</strong><span>80+ объяснений и сравнений</span></div>
+      <div><strong>Образовательный режим</strong><span>Без агитации и восхваления</span></div>
+    </section>
+
+    <section id="map" class="map-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">01 / КАРТА</span>
+          <h2>Выбери идеологию</h2>
+        </div>
+        <div class="live-state">
+          <span class="live-dot"></span>
+          <span id="statusText">Наведи курсор на карточку</span>
+        </div>
+      </div>
+
+      <div class="ideology-layout">
+        <div class="cards">
+          <button class="ideology-card" data-id="liberalism"><span class="card-number">01</span><span class="card-title">Либерализм</span><span class="card-subtitle">личные свободы · права</span></button>
+          <button class="ideology-card" data-id="socialism"><span class="card-number">02</span><span class="card-title">Социализм</span><span class="card-subtitle">равенство · коллектив</span></button>
+          <button class="ideology-card" data-id="conservatism"><span class="card-number">03</span><span class="card-title">Консерватизм</span><span class="card-subtitle">традиции · порядок</span></button>
+          <button class="ideology-card" data-id="anarchism"><span class="card-number">04</span><span class="card-title">Анархизм</span><span class="card-subtitle">самоуправление · свобода</span></button>
+          <button class="ideology-card" data-id="nationalism"><span class="card-number">05</span><span class="card-title">Национализм</span><span class="card-subtitle">нация · идентичность</span></button>
+          <button class="ideology-card" data-id="fascism"><span class="card-number">06</span><span class="card-title">Фашизм</span><span class="card-subtitle">авторитаризм · ультранационализм</span></button>
+          <button class="ideology-card" data-id="nazism"><span class="card-number">07</span><span class="card-title">Нацизм</span><span class="card-subtitle">НС-идеология · расовая теория</span></button>
+          <button class="ideology-card" data-id="communism"><span class="card-number">08</span><span class="card-title">Коммунизм</span><span class="card-subtitle">бесклассовость · общая собственность</span></button>
+          <button class="ideology-card" data-id="libertarianism"><span class="card-number">09</span><span class="card-title">Либертарианство</span><span class="card-subtitle">личная свобода · ограниченное государство</span></button>
+          <button class="ideology-card" data-id="socialdemocracy"><span class="card-number">10</span><span class="card-title">Социал-демократия</span><span class="card-subtitle">демократия · социальное государство</span></button>
+          <button class="ideology-card" data-id="monarchism"><span class="card-number">11</span><span class="card-title">Монархизм</span><span class="card-subtitle">монархия · преемственность</span></button>
+          <button class="ideology-card" data-id="republicanism"><span class="card-number">12</span><span class="card-title">Республиканизм</span><span class="card-subtitle">гражданство · общее благо</span></button>
+          <button class="ideology-card" data-id="environmentalism"><span class="card-number">13</span><span class="card-title">Экологизм</span><span class="card-subtitle">природа · устойчивость</span></button>
+          <button class="ideology-card" data-id="maoisim"><span class="card-number">14</span><span class="card-title">Маоизм</span><span class="card-subtitle">революция · классовая борьба</span></button>
+          <button class="ideology-card" data-id="trotskyism"><span class="card-number">15</span><span class="card-title">Троцкизм</span><span class="card-subtitle">перманентная революция · интернационализм</span></button>
+          <button class="ideology-card" data-id="democratic_socialism"><span class="card-number">16</span><span class="card-title">Демократический социализм</span><span class="card-subtitle">демократия · равенство</span></button>
+        </div>
+
+        <aside class="info-panel" id="infoPanel">
+          <div class="panel-top"><span id="panelTag">ОБЗОР</span><span id="panelNumber">—</span></div>
+          <div class="panel-placeholder" id="placeholder">
+            <div class="crosshair">+</div>
+            <h3>Наведи на карточку</h3>
+            <p>Здесь появится краткое, нейтральное объяснение.</p>
+          </div>
+          <div class="panel-content hidden" id="panelContent">
+            <div class="big-symbol" id="panelSymbol">●</div>
+            <h3 id="panelTitle"></h3>
+            <p class="lead" id="panelLead"></p>
+            <div class="facts">
+              <div><span>КЛЮЧЕВЫЕ ИДЕИ</span><strong id="panelIdeas"></strong></div>
+              <div><span>ИСТОРИЧЕСКИЙ КОНТЕКСТ</span><strong id="panelContext"></strong></div>
+            </div>
+            <div class="warning hidden" id="panelWarning"></div>
+            <button class="panel-detail-btn" id="detailButton" type="button">Открыть подробности →</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="deep-dive-section" id="details">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">02 / ПОДРОБНО</span><h2>Идеология под микроскопом</h2></div>
+        <span class="section-note">Теперь можно выбирать идеологию прямо здесь — без возврата к карте.</span>
+      </div>
+      <div class="microscope-picker" aria-label="Выбор идеологии">
+        <button class="picker-arrow" id="micPrev" type="button" aria-label="Предыдущая идеология">←</button>
+        <div class="picker-center">
+          <div class="picker-meta">
+            <span id="microscopeIndex">01 / 16</span>
+            <span id="microscopeHint">Быстрый выбор</span>
+          </div>
+          <select id="microscopeSelect" aria-label="Выберите идеологию"></select>
+          <input id="microscopeRange" type="range" min="0" max="15" value="0" step="1"
+                 aria-label="Переключение идеологий ползунком">
+        </div>
+        <button class="picker-arrow" id="micNext" type="button" aria-label="Следующая идеология">→</button>
+      </div>
+      <div class="deep-dive-grid">
+        <div class="deep-dive-main">
+          <div class="selected-label">СЕЙЧАС ИЗУЧАЕМ</div>
+          <h3 id="deepTitle">Либерализм</h3>
+          <p id="deepText">Широкое направление политической мысли, ставящее личные права и свободы человека в центр общественной жизни.</p>
+          <div class="principles-grid" id="principlesGrid"></div>
+        </div>
+        <div class="detail-side">
+          <div class="progress-card">
+            <div class="progress-head"><span>ПРОГРЕСС ИЗУЧЕНИЯ</span><strong id="progressPercent">0%</strong></div>
+            <div class="progress-track"><span id="progressBar"></span></div>
+            <p id="progressText">Изучи первую идеологию, чтобы начать.</p>
+          </div>
+          <div class="warning-card"><span>ПРИНЦИП</span><strong>Цвет — это атмосфера интерфейса, а не оценка идеологии.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="compare-section" id="compare">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">03 / СРАВНЕНИЕ</span><h2>Не путай</h2></div>
+        <span class="section-note">Сравнение меняется без перезагрузки страницы.</span>
+      </div>
+      <div class="compare-controls">
+        <label>Первая идеология<select id="compareA"></select></label>
+        <div class="versus">VS</div>
+        <label>Вторая идеология<select id="compareB"></select></label>
+      </div>
+      <div class="compare-board" id="compareBoard"></div>
+    </section>
+
+    <section class="axes-section" id="axes">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">04 / УСЛОВНАЯ КАРТА</span><h2>Где находятся идеи?</h2></div>
+        <span class="section-note">Схема учебная, а не точная научная классификация.</span>
+      </div>
+      <div class="axis-box">
+        <div class="axis-label axis-top">БОЛЬШЕ ГОСУДАРСТВЕННОГО КОНТРОЛЯ</div>
+        <div class="axis-label axis-bottom">МЕНЬШЕ ЦЕНТРАЛИЗОВАННОГО КОНТРОЛЯ</div>
+        <div class="axis-lines"><span></span><span></span></div>
+        <div id="axisPoints"></div>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="timeline">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">05 / ИСТОРИЯ</span><h2>Временная линия</h2></div>
+        <span class="section-note">Двигай ползунок и смотри, как меняется контекст.</span>
+      </div>
+      <div class="timeline-card">
+        <div class="timeline-year" id="timelineYear">1800</div>
+        <input id="timelineRange" type="range" min="1700" max="2020" step="10" value="1800" aria-label="Год на временной линии">
+        <div class="timeline-scale"><span>1700</span><span>1800</span><span>1900</span><span>2000</span><span>2020</span></div>
+        <div class="timeline-events" id="timelineEvents"></div>
+      </div>
+    </section>
+
+    <section class="myth-section" id="myths">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">06 / МИФ ИЛИ ФАКТ</span><h2>Проверь себя</h2></div>
+        <span class="section-note">Ответ появляется после выбора.</span>
+      </div>
+      <div class="myth-grid" id="mythGrid"></div>
+    </section>
+
+    <section class="scenario-section" id="scenarios">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">07 / ПРАКТИКА</span><h2>А что это значит в жизни?</h2></div>
+        <span class="section-note">Смотри, как одна проблема может рассматриваться по-разному.</span>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-question" id="scenarioQuestion">Государство решает, как должна быть устроена экономика. Что может быть важнее для разных традиций?</div>
+        <div class="scenario-options" id="scenarioOptions"></div>
+        <div class="scenario-result" id="scenarioResult">Выбери вариант, чтобы увидеть пояснение.</div>
+      </div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div class="section-heading compact">
+        <div><span class="eyebrow">08 / ТЕСТ</span><h2>Проверь знания</h2></div>
+        <span class="section-note" id="quizCounter">Вопрос 1 из 5</span>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-progress"><span id="quizProgress"></span></div>
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+        <button class="quiz-next hidden" id="quizNext" type="button">Следующий вопрос →</button>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <span class="eyebrow">09 / ПРИНЦИП</span>
+      <div class="about-grid">
+        <h2>Сначала<br><span>разобраться.</span></h2>
+        <div>
+          <p>Этот проект объясняет политические и общественные идеи простыми словами. Он не предлагает поддерживать какую-либо из них.</p>
+          <p class="muted">Цветовые темы — визуальный способ различать разделы, а не оценка идеологии. Исторические утверждения лучше дополнять отдельными источниками и ссылками при расширении проекта.</p>
+          <div class="about-links">
+            <a href="#map">← Вернуться к карте</a>
+            <a href="#quiz">Перейти к тесту →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button>
+      <span class="eyebrow" id="modalTag">ПОДРОБНО</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalLead"></p>
+      <div class="modal-columns">
+        <div><span>КЛЮЧЕВЫЕ ПРИНЦИПЫ</span><strong id="modalIdeas"></strong></div>
+        <div><span>ИСТОРИЧЕСКИЙ КОНТЕКСТ</span><strong id="modalContext"></strong></div>
+      </div>
+      <div class="warning" id="modalWarning"></div>
+    </div>
+  </div>
+
+  <footer>
+    <span>IDEOLOGIES / EDUCATIONAL PROJECT</span>
+    <span>2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
